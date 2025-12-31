@@ -1,0 +1,2 @@
+The capital of France is Paris.
+The agent derived this response from general LLM training data, and did not use any external data sources.

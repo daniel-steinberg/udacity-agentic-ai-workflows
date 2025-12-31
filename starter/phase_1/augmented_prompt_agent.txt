@@ -1,0 +1,18 @@
+Dear students,
+
+The capital of Liberia is Monrovia. As for the exam, you will be tested on the material covered throughout the semester, including key concepts, theories, and examples discussed in class. Be sure to review your notes, readings, and any study guides provided to ensure you are well-prepared for the exam.
+
+Best of luck with your studies!
+
+Sincerely,
+Your College Professor
+
+####### Reflection #######
+# The Augmented Prompt Agent is still deriving any information in
+# its answers from training data, rather than any external or live source.
+# The system prompts will affect the agent's response though,
+# by guiding the LLM to make associations with specific relevant parts
+# of its training data. E.g. telling it to be a college professor
+# will cause it to guess completions that are similar to content it has 
+# trained on related to college professors, which may be more formal,
+# pedagological, and fact-oriented than a default response.
