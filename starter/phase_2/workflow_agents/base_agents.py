@@ -11,7 +11,7 @@ class DirectPromptAgent:
     
     def __init__(self, openai_api_key):
         # Initialize the agent
-        self.openai_api_key = "voc-28971970815987445565756953e33d32d564.49255140"
+        self.openai_api_key = openai_api_key
 
     def respond(self, prompt):
         # Generate a response using the OpenAI API
@@ -33,7 +33,7 @@ class DirectPromptAgent:
             res = response.choices[0].message.content
             return res
         except Exception as e:
-            print("Error with AI response: {e}")
+            print(f"Error with AI response: {e}")
             return str(e)
 
         
@@ -65,7 +65,7 @@ class AugmentedPromptAgent:
             res = response.choices[0].message.content
             return res
         except Exception as e:
-            print("Error with AI response: {e}")
+            print(f"Error with AI response: {e}")
             return str(e)
 
 
@@ -271,7 +271,7 @@ class EvaluationAgent:
             response = client.chat.completions.create(
                 model="gpt-3.5-turbo",
                 messages=[
-                    {"role": "system", "content": f"You are {self.persona}, an evaluation agent who asseses the responses of other agents' answers. Forget previous context."},
+                    {"role": "system", "content": f"You are {self.persona}, an evaluation agent who assesses the responses of other agents' answers. Forget previous context."},
                     {"role": "user", "content": eval_prompt}
                 ],
                 temperature=0
@@ -291,7 +291,7 @@ class EvaluationAgent:
                 response = client.chat.completions.create(
                     model="gpt-3.5-turbo",
                     messages=[
-                        {"role": "system", "content": f"You are {self.persona}, an evaluation agent who asseses the responses of other agents' answers. Forget previous context."},
+                        {"role": "system", "content": f"You are {self.persona}, an evaluation agent who assesses the responses of other agents' answers. Forget previous context."},
                         {"role":"user", "content": instruction_prompt}
                     ],
                     temperature=0
@@ -318,7 +318,6 @@ class RoutingAgent():
 
     def __init__(self, openai_api_key, agents):
         # Initialize the agent with given attributes
-        self.openai_api_key = openai_api_key
         self.openai_api_key = openai_api_key
         self.agents = agents
 
